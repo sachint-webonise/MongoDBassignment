@@ -1,0 +1,27 @@
+
+TITLE:
+
+Documentation of learnings after reading about BASE
+======================================================
+
+
+BASE is an acronym for Basically Available Soft-state services with Eventual-consistency.
+The term came into picture from Brewers Theorem which states that states that it is not possible for a distributed computer system to simultaneously provide all three of the following guarantees:
+Consistency -all nodes see the same data at the same time
+Availability -a guarantee that every request receives a response about whether it was successful or failed
+Partition tolerance-the system continues to operate despite arbitrary message loss or failure of part of the system
+
+Designers are forced to decide between consistency and availability.
+The availability of BASE is achieved through supporting partial failures without total system failure, for example: if users are partitioned across five database servers, BASE design encourages crafting operations in such a way that a user database failure impacts only few percent of the users on that particular host. 
+
+Like ACID is for relational DBMS, so is BASE for non relational DBMS
+
+
+The principles of BASE are,
+1) Basic Availability
+	NoSQL focuses on availability of data by making data distributed with help of replication rather focusing on single large data store.
+2)Soft State
+	An ACID system ensures consistency after each operation but a BASE system simply guarantees consistency after a reasonable time span. Consistency is ensured, 		but not necessarily immediately which makes data to be held in soft state. 
+3)Eventual Consistency
+	The only requirement that NoSQL databases have regarding consistency is to require that at some point in the future data will converge to a consistent state. 		No guarantees are made about when this will occur. It assumes that it’s ok to use stale data, and it’s ok to give approximate answers.
+

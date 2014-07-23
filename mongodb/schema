@@ -1,0 +1,153 @@
+
+
+ASSESSMENTMANAGEMENTSYSTEM
+============================
+
+
+
+db.assessment.insert([
+{ 
+	assessid:1,
+	assessname:'Test1',
+	questions:{
+		questionid:1,
+		questionstring:'What animal is king of family ?'
+		
+	}
+	users:[	
+      	{
+         	userid:1,
+		username:'Sachin Tiwari',
+		email:'sachintiwari@gmail.com', 
+      	}
+	{
+		userid:2,
+		username:'Murtaza Bagwala',
+		email:'Murtaza Bagwala',
+	}]
+},
+{ 
+	assessid:2,
+	assessname:'Test2',
+	questions:{
+		questionid:2,
+		questionstring:'Which country is not in asia?'
+	}
+	users:{
+		userid:1,
+		username:'Sachin Tiwari',
+		email:'sachintiwari@gmail.com',
+		
+	}
+}
+])
+
+
+db.users.insert([
+{
+	userid:1,
+	username:'Sachin Tiwari'
+	email:'sachintiwari@gmail.com',
+	assessment:[
+	{	
+		assessid:1,
+		assessname:'Test1',
+	}
+	{
+		assessid:2,
+		assessname:'Test2',
+	}	
+	]	
+}
+{
+	userid:2,
+	username:'Murtaza Bagwala',
+	email:'murtazabagwala@gmail.com',
+	assessment:{
+		assessid:1,
+		assessname:'Test2',
+	}
+		
+}
+])
+
+
+
+
+
+db.questions.insert([
+{
+	questionid:1,
+	optionsetid:1,
+	questionstring:'Which animal is king of family ?',
+	assessment:{
+		assessid:1,
+		assessname:'Test1',
+		
+	}
+	
+}
+{
+	questionid:2,
+	optionsetid:2,
+	questionstring:'Which country is not in asia ?',
+	assessment:{
+			assessid:1,
+			assessname:'Test1',
+		   }
+	
+
+}
+{
+	questionid:3,
+	optionsetid:3,
+	questionstring:'Which amongst these is nocturnal ?',
+	assessment:{
+			assessid:1,
+			assessname:'Test1',
+		   }
+
+}
+
+])
+
+
+
+
+
+db.optionset.insert([
+{	
+	optionsetid:1,
+	options:{
+		id1:'Tiger',
+		id2:'Lion',
+		id3:'Elephant',
+		id4:'Cat',
+	}
+	
+}
+{
+	optionsetid:2,
+	options:{
+		id1:'India',
+		id2:'Nepal',
+		id3:'China',
+		id4:'Brazil',
+	}
+	
+}
+{
+	optionsetid:3,
+	options:{
+		id1:'Owl',
+		id2:'Crow',
+		id3:'Pigeon',
+		id4:'Sparrow',
+	}
+	
+	
+}	
+])
+
+
+

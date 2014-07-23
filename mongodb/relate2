@@ -1,0 +1,50 @@
+
+
+db.assessment.insert(
+{
+	assessid:1,
+	assessname:'test1',
+	questions:
+	[
+		{               questionid:1,
+                  		questionstring:'Which animal is king of jungle',
+                  		optionset:[
+                        	    		{id1:'Tiger'},
+						{id2:'Lion'},
+						{id3:'Elephant'},
+						{id4:'Cat'}
+					]	
+		},
+        	{
+                  		questionid:2,
+                  		questionstring:'Which amongst these is nocturnal',
+                  		optionset:[
+                            			{id1:'Owl'},
+						{id2:'Pigeon'},
+						{id3:'Crow'},
+						{id4:'Sparrow'}
+					]
+		},
+		{
+                  		questionid:3,
+                  		questionstring:'National animal of India',
+                  		optionset:[
+                            			{id1:'Tiger'},
+						{id2:'Peacock'},
+						{id3:'Crow'},
+						{id4:'Sparrow'}
+				]
+		}
+ 	]
+}
+)
+
+
+=====================================================================================================================================
+
+db.assessment.update({assessid:1,'questions.questionid':1},{$set:{'questions.$.questionid':4})
+
+db.assessment.update({assessid:1},{$set:{'questions.1.questionstring':'Find nocturnal creature?','questions.1.optionset.0.id1':'Bat'}})
+
+
+

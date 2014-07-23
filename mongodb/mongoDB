@@ -1,0 +1,19 @@
+
+MongoDB is a cross-platform, document oriented database that provides, high performance, high availability, and easy scalability. MongoDB works on concept of collection and document.
+
+Each database in MongoDB consists of collections which are equivalent to an RDBMS database consisting of SQL tables. Each collection stores data in the form of documents which is equivalent to tables storing data in rows. While a row stores data in its set of columns, a document has a JSON-like structure (known as BSON in MongoDB). Like the way we have rows in an SQL row, we have fields in MongoDB.
+
+
+_id is a 12 bytes hexadecimal number which assures the uniqueness of every document. You can provide _id while inserting the document. If you didn't provide then MongoDB provide a unique id for every document. These 12 bytes first 4 bytes for the current timestamp, next 3 bytes for machine id, next 2 bytes for process id of mongodb server and remaining 3 bytes are simple incremental value.
+
+
+
+
+Dynamic Schema
+Different documents within a collection can have different schemas. So, it is possible in MongoDB for one document to have five fields and the other document to have seven fields. The fields can be easily added, removed and modified anytime. 
+
+
+Relationships in RDBMS are achieved using primary and foreign key relationships and querying those using joins. There is no such straightforward mapping in MongoDB but the relationships here are designed using embedded and linking documents.
+Relations & their corresponding operations have to be taken care manually as no foreign key constraints & rules apply
+If data to be embedded is expected to grow larger in size it is better to use linking approach rather than embedded approach to avoid document becoming too large
+Embedded approach is generally used in cases where limited approach of info has to be embedded.
